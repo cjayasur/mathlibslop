@@ -1,0 +1,30 @@
+# mathlibslop entry 0001
+name        = "alpoge-riemann"
+title       = "Riemann Hypothesis (and GRH for Dirichlet L-functions), AI-assisted"
+authors     = ["Levent Alpöge"]
+ai_assist   = "Claude (Anthropic)"
+source      = "https://alpo.ge/lean.tar.gz.part01..14"
+note        = "https://alpo.ge/remark.pdf"
+claimed     = "2026-11-20"
+status      = "unverified-by-community"   # kernel-checkable here; ideas-level review pending
+
+# --- reproducibility pin ---
+lean_toolchain = "leanprover/lean4:v4.33.1"
+mathlib_rev    = "0df444a360eaa60ab8c11dca51a86af692955474"
+project_path   = "/home/cjayasur/lean-riemann/lean"   # on tower (10.0.0.33)
+
+# --- scale (why it's "slop": machine-verbose, bespoke, non-reusable) ---
+files = 175187
+lines = 17374215
+
+# --- the claimed top-level results, as MODULE:THEOREM ---
+results = [
+  "Main:riemannHypothesis",
+  "Main:riemannZeta_eq_zero_re",
+  "Main:LFunction_ne_zero_of_half_lt_re",
+  "Main:LFunction_eq_zero_re",
+  "Main:LFunction_eq_zero_re_of_isPrimitive",
+]
+
+# RiemannHypothesis is mathlib's own definition (import Mathlib in Statements.lean)
+# — the proof cannot redefine the target. The gate confirms only standard axioms.

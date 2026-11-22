@@ -1,0 +1,3 @@
+# local build scratch
+*.tmp
+slop_build.*
