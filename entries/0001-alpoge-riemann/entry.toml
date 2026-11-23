@@ -6,7 +6,7 @@ ai_assist   = "Claude (Anthropic)"
 source      = "https://alpo.ge/lean.tar.gz.part01..14"
 note        = "https://alpo.ge/remark.pdf"
 claimed     = "2026-11-20"
-status      = "unverified-by-community"   # kernel-checkable here; ideas-level review pending
+status      = "kernel-certified"          # lake build clean + axiom gate passed here; community/ideas-level review still pending
 
 # --- reproducibility pin ---
 lean_toolchain = "leanprover/lean4:v4.33.1"
@@ -28,3 +28,15 @@ results = [
 
 # RiemannHypothesis is mathlib's own definition (import Mathlib in Statements.lean)
 # — the proof cannot redefine the target. The gate confirms only standard axioms.
+
+# --- CERTIFICATION (the gate's verdict) ---
+[certification]
+verdict       = "CERTIFIED"
+certified_on  = "2026-11-23T12:51:45Z"
+host          = "tower (10.0.0.33), Xeon Silver 4114"
+build         = "lake build — 183903 jobs, exit 0, 0 errors"
+axioms        = ["propext", "Classical.choice", "Quot.sound"]   # all 5 results; nothing else
+cert_file     = "certs/alpoge-riemann.20261123T125145Z.cert.txt"
+cert_sha256   = "ca8603133e221a1334204a8f5736f7e66d4c1a39932f1b65b7266a907cd938e2"
+# Every claimed result's `#print axioms` = exactly the 3 standard Lean axioms:
+# no sorryAx, no Lean.ofReduceBool, no custom axiom. Kernel-sound.

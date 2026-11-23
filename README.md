@@ -56,4 +56,11 @@ Certificates (tamper-evident, sha256-stamped) land in `certs/`.
 ## Status
 
 - **Entry 0001** — Alpöge's Claude/Fable-assisted Riemann Hypothesis proof
-  (175,187 files / 17.4M lines). Verification pending clean build on the tower.
+  (175,187 files / 17.4M lines). **✅ CERTIFIED (2026-11-23).** `lake build`
+  completed clean (183,903 jobs, exit 0, 0 errors) and all 5 claimed results
+  pass the axiom gate: each `#print axioms` = exactly
+  `[propext, Classical.choice, Quot.sound]` — no `sorryAx`, no
+  `Lean.ofReduceBool`, no custom axiom. Certificate:
+  [`certs/alpoge-riemann.20261123T125145Z.cert.txt`](certs/alpoge-riemann.20261123T125145Z.cert.txt)
+  (sha256 `ca8603…38e2`).
+  Kernel-sound here; community / ideas-level review is a separate, still-open question.
