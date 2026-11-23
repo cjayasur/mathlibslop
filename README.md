@@ -1,5 +1,7 @@
 # mathlibslop — a verification-gated archive for AI-generated Lean proofs
 
+🌐 **Live:** <https://api.palomaressoftware.com/mathlibslop/>
+
 A **"formal arXiv" for the AI era**: a place to park machine-generated Lean 4
 proofs where each entry is **machine-certified**, reproducible, and frozen —
 *correctness guaranteed by the Lean kernel, elegance not required.*
